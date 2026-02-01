@@ -1,6 +1,6 @@
 import * as fastify from 'fastify';
 import * as http from 'http';
-import { IDecodedToken } from './clients.enum';
+import { IDecodedToken } from './a2a.bindings';
 
 declare module 'fastify' {
   export interface FastifyInstance<

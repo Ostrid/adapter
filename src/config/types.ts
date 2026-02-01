@@ -1,3 +1,5 @@
+import { I } from "@a2a-js/sdk/dist/extensions-DvruCIzw";
+
 export interface IProcessEnv {
   [key: string]: string | undefined;
 }
@@ -12,6 +14,7 @@ export interface IBaseConfig {
 interface IApp {
   host: string;
   port: number;
+  url:string;
 }
 
 interface IApi {
@@ -46,6 +49,11 @@ interface IKafka {
   port: string;
 }
 
+interface ISui {
+  rpcUrl: string;
+  network: string;
+}
+
 export interface IEnvConfig {
   app: IApp;
   // ssl: ISsl;
@@ -56,4 +64,5 @@ export interface IEnvConfig {
   kafka: IKafka;
   bcrypt: IBcrypt;
   // debug: IDebug;
+  sui:ISui
 }
