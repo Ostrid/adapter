@@ -12,6 +12,7 @@ export interface IBaseConfig {
 interface IApp {
   host: string;
   port: number;
+  url:string;
 }
 
 interface IApi {
