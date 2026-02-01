@@ -1,4 +1,4 @@
-import { OstridAgentCard } from "./clients.enum";
+import { OstridAgentCard } from "./a2a.bindings";
 import config from "../config";
 import { AgentCapabilities, AgentSkill } from "@a2a-js/sdk";
 

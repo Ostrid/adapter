@@ -1,4 +1,4 @@
-import { AgentCard, Task } from "@a2a-js/sdk";
+import { AgentCard, Message, Task } from "@a2a-js/sdk";
 
 export interface IDecodedToken {
   user_id: string;
@@ -7,8 +7,15 @@ export interface IDecodedToken {
   exp: number;
 }
 
+ export enum OstridAdapterActions {
+  RAISE_TASK_JOB = "raise-task-job",
+  DISCOVERY = "discovery",
+  ATTEST = "attest",
+  NEGOTIATION = "negotiation",
+}
+
 export type OstridAgentCard = AgentCard & {
-   ostrid: {
+  ostrid: {
     version: string;
     protocolOverview?: string;
     baseApiUrl?: string;
@@ -46,11 +53,27 @@ export type OstridAgentCard = AgentCard & {
   };
 };
 
-export type TaskJob = Task & 
-{
-  ostrid:{
+export type TaskJob = Task & {
+  ostrid: {
     id: string;
-    budget:string;   // USDC amount in bigint string format
-    quality?:number; // 0 to 1
-  }
-}
+    budget: string; // USDC amount in bigint string format
+    quality?: number; // 0 to 1
+  };
+};
+
+export type OstridMessage = Message & {
+  ostrid?: {
+    version?: string;
+    action: OstridAdapterActions;
+    taskJob?: TaskJob;
+    negotiationMode?: string;
+    settlementDetails?: {
+      token?: string;
+      escrowAddress?: string;
+    };
+    validationDetails?: {
+      method?: string;
+      attestation?: string;
+    };
+  };
+};

@@ -8,7 +8,7 @@
     "types": ["node"],
     "typeRoots": ["src/constants/index.d.ts", "node_modules/@types"],
     "resolveJsonModule": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "allowJs": true,
     "outDir": "./dist",
     "esModuleInterop": true,

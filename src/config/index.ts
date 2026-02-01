@@ -46,6 +46,10 @@ switch (nodeEnv) {
         url: processEnv.KAFKA_URL || "localhost",
         port: processEnv.kAFKA_PORT || "9092",
       },
+      sui: {
+        rpcUrl: processEnv.SUI_RPC_URL || "https://fullnode.mainnet.sui.io:443",
+        network: processEnv.SUI_NETWORK || "mainnet",
+      },
     };
     break;
 
@@ -79,6 +83,10 @@ switch (nodeEnv) {
       kafka: {
         url: processEnv.KAFKA_URL || "localhost",
         port: processEnv.kAFKA_PORT || "9092",
+      },
+      sui: {
+        rpcUrl: processEnv.SUI_RPC_URL || "https://fullnode.mainnet.sui.io:443",
+        network: processEnv.SUI_NETWORK || "mainnet",
       },
     };
 }
